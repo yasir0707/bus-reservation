@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <!-- CSS only -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+
+<!-- JS, Popper.js, and jQuery -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+  </head>
+  <body>
+    <%- include('header') -%>
+    <h1><%= title %></h1>
+    <p>Welcome to <%= title %></p>
+    <% if(msg != ''){ %>
+        <%= msg %>
+    <% } %>
+    <form method="POST" action="/user/register" enctype="multipart/form-data">
+        <div class="form-group col-md-4">
+            <label for="username1">Fullname</label>
+            <input type="text" class="form-control" name="fullname" placeholder="Enter username">
+          </div> 
+          <div class="form-group col-md-4">
+          <label for="exampleInputEmail1">Email address</label>
+          <input type="email" class="form-control" name="email" placeholder="Enter email">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="exampleInputPassword1">Password</label>
+          <input type="password" class="form-control"  name="password" placeholder="Password">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="exampleInputPassword1">Confirm Password</label>
+          <input type="password" class="form-control"  name="cpass" placeholder="Password">
+        </div>
+        <div class="form-group col-md-4">
+          <label for="exampleInputPassword1">Contact</label>
+          <input type="number" class="form-control"  name="contact" placeholder="Enter Contact">
+        </div>
+        <div class="form-group col-md-4">
+            <label for="username1" >Gender</label>
+                <select class="form-control" name="gender">
+                    <option>Male</option>
+                    <option>Female</option>
+                </select>
+        </div> 
+        <div class="form-group col-md-4">
+            <label for="username1">Date-of-Birth</label>
+            <input type="date" class="form-control" name="dob" placeholder="">
+          </div> 
+          <div class="form-group col-md-4">
+            <label for="username1">Address</label>
+            <input type="text" class="form-control" name="address" placeholder="Enter complete address">
+          </div> 
+      
+          <div class="form-group col-md-4">
+            <label for="username1">Image</label>
+            <input type="file" class="form-control" name="file" placeholder="" value="Browse">
+          </div> 
+        <button type="submit" class="btn btn-primary">Submit</button>
+      </form>
+
+      <%- include('footer') -%>
+    </body>
+</html>
